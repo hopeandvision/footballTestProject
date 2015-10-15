@@ -19,6 +19,7 @@ now check if you have node_modules and bower_components
 
 if bower_components is missing run
 ```
+npm install -g bower
 bower install
 ```
 
