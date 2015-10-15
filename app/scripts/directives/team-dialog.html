@@ -1,0 +1,31 @@
+
+<div class="ngdialog-message">
+	<div class="clubLogo">
+		<img height="140" width="140" ng-src="http://footballbet.com.ua/teams/embl/{{team.emblema}}" alt=""/>
+	</div>
+	<h2>{{team.name}}</h2>
+	<div class="labels">
+		<ul>
+			<li>Рік заснування:</li>
+			<li>Місто:</li>
+			<li>Президент:</li>
+			<li>Тренер:</li>
+			<li>Доманшній Стадіон:</li>
+			<li>Офіційний сайт:</li>
+			<li>Досягнення:</li>
+		</ul>
+	</div>
+	<div class="value">
+		<ul>
+			<li>&nbsp;{{team.foundation_year}}</li>
+			<li>&nbsp;{{team.city}}</li>
+			<li>&nbsp;{{team.president}}</li>
+			<li>&nbsp;{{team.coach}}</li>
+			<li>&nbsp;{{team.home_stadion}}</li>
+			<li>&nbsp;<a href="{{team.off_site}}">{{team.off_site}}</a></li>
+			<li ng-bind-html="team.title"></li>
+
+		</ul>
+	</div>
+
+</div>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="competitionApp">
+<head>
+	<meta charset="utf-8">
+	<title>Football Competitions</title>
+
+	<link href="build/css/main.css" rel="stylesheet" type="text/css">
+
+	<link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog.min.css"/>
+	<link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog-theme-default.css"/>
+
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/spin.js/spin.js"></script>
+	<script src="bower_components/angular-spinner/angular-spinner.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="bower_components/ng-dialog/js/ngDialog.min.js"></script>
+	<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+
+	<script src="app.js"></script>
+	<script src="app/scripts/controller/controllers.js"></script>
+	<script src="app/scripts/services/resource-loader-service.js"></script>
+	<script src="app/scripts/directives/team-dialog-directive.js"></script>
+
+</head>
+<body ng-controller="retrieveCompetitions">
+	<span us-spinner="{radius:30, width:8, length: 16}" spinner-key='load-spinner' spinner-start-active="true"></span>
+	<div ng-repeat="competition in competitions" class="compCard">
+		<div class="wrapper">
+
+			<div class="header">
+				<img class="competitionImg" src="http://footballbet.com.ua/table/embl/{{competition.image}}" alt=""/>
+				<span>{{competition.name}}</span>
+			</div>
+
+			<div class="search"><input type="text" ng-model="query" placeholder="search by team name"/></div>
+
+			<ol class="teamsList">
+				<li ng-repeat="team in teams | filter:{id_championship:competition.id_championship} | filter:query"
+					ng-hide="team.name == ''">
+					<span team-dialog team="team"></span>
+				</li>
+			</ol>
+
+		</div>
+	</div>
+
+</body>
+</html>

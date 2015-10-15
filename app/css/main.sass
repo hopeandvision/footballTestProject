@@ -1,0 +1,55 @@
+@import variables
+@import dialog
+
+.compCard
+	min-height:	150px
+	max-height: 330px
+	margin: 15px
+	background-color: white
+	border-radius: 5px
+	font-size: 24px
+	width: 45%
+	float: left
+	font-family: $card_font
+	box-shadow: 1px 1px 7px 0px rgba(71,71,71,0.51)
+
+	.wrapper
+		padding: 10px
+	
+	.header
+		margin-bottom: 10px
+		font-size: 24px
+		color: $heading_color
+		height: 40px
+
+		.competitionImg
+			width: 40px
+			height: 40px
+			float: left
+
+		span
+			padding: 6px 0 0 10px
+			float: left
+		
+	.search input		
+		height: 30px
+		width: 100%
+		padding: 0px
+		margin: 0px
+		border: 2px inset
+
+	ol
+		overflow-y: auto
+		list-style-type: decimal
+		max-height: 200px
+		padding: 0px
+
+	ol.teamsList li
+		margin-left: 50px
+		font-size: 18px
+
+		span
+			cursor: pointer
+		img.teamImg
+			width: 20px
+			height: 20px
